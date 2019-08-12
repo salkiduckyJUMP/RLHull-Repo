@@ -1,0 +1,60 @@
+// Abstract class
+abstract class Player {
+    // Abstract method (does not have a body)
+    public abstract void playerStyle();
+    // Regular method
+    public void takesDamage() {
+      System.out.println("Oof!");
+    }
+
+    public void victory() {
+      System.out.println("I win!");
+    }
+
+    //I can declare a method with access modifiers in an abstract class
+    protected void score() {
+      System.out.println("I can't show you!");
+    }
+  }
+  
+  // Subclass (inherit from Player)
+  class Mario extends Player {
+    public void playerStyle() {
+      // The body of playerStyle() is provided here
+      System.out.println("Mario goes after Mushrooms");
+
+    }
+
+    public void victory() {
+      System.out.println("Yahoo! Mario's the winner!");
+    }
+  }
+
+  class Luigi extends Player {
+    public void playerStyle() {
+      // The body of playerStyle() is provided here
+      System.out.println("Luigi loves Skeleton Keys");
+
+    }
+
+    public void victory() {
+      System.out.println("Yeah! Luigi's the SuperStar!");
+    }
+  }
+  
+  class MyACDemo {
+    public static void main(String[] args) {
+      Mario myMario = new Mario(); // Create a Mario object
+      myMario.playerStyle();
+      myMario.takesDamage();
+      myMario.victory();
+      Luigi myLuigi = new Luigi();
+      myLuigi.victory();
+
+      //Code below will throw an error as you cannot instantiate an abstract class!
+      //Player newPlayer = new Player();
+      //myPlayer.playerStyle();
+    }
+  }
+
+
